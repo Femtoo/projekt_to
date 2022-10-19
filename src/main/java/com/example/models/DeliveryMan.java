@@ -1,24 +1,16 @@
 package com.example.models;
 
 public class DeliveryMan {
-    private int id;
     private String name;
     private String last_name;
     private int delivery_man_nr;
     
-    public DeliveryMan(int id, String name, String last_name, int delivery_man_nr) {
-        this.id = id;
+    public DeliveryMan(String name, String last_name, int delivery_man_nr) {
         this.name = name;
         this.last_name = last_name;
         this.delivery_man_nr = delivery_man_nr;
     }
-    
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
+
     public String getName() {
         return name;
     }
