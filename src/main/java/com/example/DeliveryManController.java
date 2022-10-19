@@ -40,8 +40,19 @@ public class DeliveryManController {
         return conn;
     }
 
-    public void create() {
+    public void create(String name, String last_name, int delivery_man_nr) {
+        String sql = "INSERT INTO delivery_man(name,last_name,delivery_man_nr) VALUES(?,?,?)";
 
+        try (Connection conn = this.connect();
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, name);
+            pstmt.setString(2, last_name);
+            pstmt.setInt(3, delivery_man_nr);
+            pstmt.executeUpdate();
+            System.out.println("Succesfully added to db");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public DeliveryMan read() {
