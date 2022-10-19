@@ -1,20 +1,12 @@
 package com.example.models;
 
 public class SortingDepartment {
-    private int id;
     private int department_nr;
     private String address;
     
-    public SortingDepartment(int id, int department_nr, String address) {
-        this.id = id;
+    public SortingDepartment(int department_nr, String address) {
         this.department_nr = department_nr;
         this.address = address;
-    }
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
     }
     public int getDepartment_nr() {
         return department_nr;
@@ -27,6 +19,5 @@ public class SortingDepartment {
     }
     public void setAddress(String address) {
         this.address = address;
-    }
-    
+    }   
 }

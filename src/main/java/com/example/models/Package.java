@@ -1,21 +1,17 @@
 package com.example.models;
 
-import java.sql.Date;
-
 public class Package {
-    private int id;
     private int package_nr;
     private String sender;
     private String receiver;
     private String address;
-    private Date incoming_date;
+    private long incoming_date;
     private int pick_up_delivery_man_id;
     private int delivering_delivery_man_id;
     private int sorting_department_id;
     
-    public Package(int id, int package_nr, String sender, String receiver, String address, Date incoming_date,
+    public Package(int package_nr, String sender, String receiver, String address, long incoming_date,
             int pick_up_delivery_man_id, int delivering_delivery_man_id, int sorting_department_id) {
-        this.id = id;
         this.package_nr = package_nr;
         this.sender = sender;
         this.receiver = receiver;
@@ -24,12 +20,6 @@ public class Package {
         this.pick_up_delivery_man_id = pick_up_delivery_man_id;
         this.delivering_delivery_man_id = delivering_delivery_man_id;
         this.sorting_department_id = sorting_department_id;
-    }
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
     }
     public int getPackage_nr() {
         return package_nr;
@@ -55,10 +45,10 @@ public class Package {
     public void setAddress(String address) {
         this.address = address;
     }
-    public Date getIncoming_date() {
+    public long getIncoming_date() {
         return incoming_date;
     }
-    public void setIncoming_date(Date incoming_date) {
+    public void setIncoming_date(long incoming_date) {
         this.incoming_date = incoming_date;
     }
     public int getPick_up_delivery_man_id() {
