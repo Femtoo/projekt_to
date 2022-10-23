@@ -84,7 +84,7 @@ public class DeliveryManController implements IDeliveryManController{
             "SET name = ?, last_name = ? " +
             "WHERE delivery_man_nr = ?";
 
-        if(validate(delivery_man_nr) == false) {
+        if(validate(delivery_man_nr) == false || deliveryMan == null) {
             return false;
         }
 
