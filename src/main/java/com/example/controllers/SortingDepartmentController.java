@@ -17,6 +17,9 @@ public class SortingDepartmentController implements ISortingDepartmentController
         if(!validate(sortingDepartment.getDepartment_nr()) == false){
             return false;
         }
+        if (sortingDepartment.getDepartment_nr() <= 0) {
+            return false;
+        }
 
         try (Connection connection = ConnectionProvider.connect();
         PreparedStatement statement = connection.prepareStatement(sql)) {
