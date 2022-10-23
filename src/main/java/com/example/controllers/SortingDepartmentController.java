@@ -98,6 +98,7 @@ public class SortingDepartmentController implements ISortingDepartmentController
             
             statement.setInt(1, sortingDepartment.getDepartment_nr());
             statement.setString(2, sortingDepartment.getAddress());
+            statement.setInt(3, department_nr);
 
             statement.executeUpdate();
             connection.close();
