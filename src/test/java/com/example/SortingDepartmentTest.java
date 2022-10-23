@@ -71,6 +71,30 @@ public class SortingDepartmentTest {
     }
 
     @Test
+    public void shouldCorrectlyBehaveOnCreateWhenAddedNegativeIndexCase2() {
+        // given
+        SortingDepartment sDepartment = new SortingDepartment(-111, "ul Szafrańska 4, Warszawa 15-333");
+
+        // when
+        boolean result = sortingDepartmentController.create(sDepartment);
+
+        // then
+        assertFalse(result);
+    }
+
+    @Test
+    public void shouldCorrectlyBehaveOnCreateWhenAddedZeroIndex() {
+        // given
+        SortingDepartment sDepartment = new SortingDepartment(0, "ul Koszykowa 14, Warszawa 15-333");
+
+        // when
+        boolean result = sortingDepartmentController.create(sDepartment);
+
+        // then
+        assertFalse(result);
+    }
+
+    @Test
     public void shouldCorrectlyBehaveOnRead() {
         // given
         SortingDepartment sDepartment = new SortingDepartment(104, "ul Krótka 5, Warszawa 15-333");

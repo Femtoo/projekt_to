@@ -71,6 +71,30 @@ public class DeliveryManTest {
     }
 
     @Test
+    public void shouldCorrectlyBehaveOnCreateWhenAddedNegativeIndexCase2() {
+        // given
+        DeliveryMan dMan = new DeliveryMan("Jakub", "Zwoluński", -100);
+
+        // when
+        boolean result = deliveryManController.create(dMan);
+
+        // then
+        assertFalse(result);
+    }
+
+    @Test
+    public void shouldCorrectlyBehaveOnCreateWhenAddedZeroIndex() {
+        // given
+        DeliveryMan dMan = new DeliveryMan("Karol", "Listwa", 0);
+
+        // when
+        boolean result = deliveryManController.create(dMan);
+
+        // then
+        assertFalse(result);
+    }
+
+    @Test
     public void shouldCorrectlyBehaveOnRead() {
         // given
         DeliveryMan dMan = new DeliveryMan("Gilbert", "Bogusz", 103);
