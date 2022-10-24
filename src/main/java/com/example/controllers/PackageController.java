@@ -106,7 +106,7 @@ public class PackageController implements IPackageController{
     public boolean update(int package_nr, Package pack) {
         String sql = "UPDATE package " + 
             "SET sender = ?, receiver = ?, address = ?, incoming_date = ?, pick_up_delivery_man_id = ?, delivering_delivery_man_id = ?, sorting_department_id = ? " + 
-            "WHERE package_id = ?";
+            "WHERE package_nr = ?";
 
         if(validate(package_nr) == false) {
             return false;
